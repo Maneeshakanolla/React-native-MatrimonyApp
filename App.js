@@ -1,20 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+
+
+import * as React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import {NativeBaseProvider,} from "native-base";
+import MyDrawer from "./screens/myDrawer/MyDrawer";
+// import HomeScreen from "./screens/drawer/Home";
+// import HiddenAScreen from "./screens/other/HiddenA";
+// import HiddenBScreen from "./screens/other/HiddenB";
+// import HiddencScreen from "./screens/other/HiddenC";
+// import HiddenDScreen from "./screens/other/HiddenD";
+// import { createDrawerNavigator } from "@react-navigation/drawer";
+// import CustomDrawer from "./screens/other/DrawerNavigation";
+
+// const Drawer=createDrawerNavigator();
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    //  <DrawerNavigator/>
+    <NavigationContainer>
+      <NativeBaseProvider>
+        <MyDrawer />
+        {/* <DrawerNavigator/> */}
+      </NativeBaseProvider>
+    </NavigationContainer>
+
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
